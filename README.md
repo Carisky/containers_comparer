@@ -38,9 +38,10 @@
 
 
 ## Зависимости
-   ```bashElectron
-   ```bashXlsxPopulate
-   ```bash Bootstrap & Animate.css & Bootstrap Icons
+   ```bash 
+   Electron
+   XlsxPopulate
+   Bootstrap & Animate.css & Bootstrap Icons
 
 
 .
