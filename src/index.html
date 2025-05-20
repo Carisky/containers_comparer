@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Сравнение Данных из колонок</title>
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../node_modules/animate.css/animate.min.css" rel="stylesheet"/>
+  <link href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    .btn-animate:hover { animation: pulse 0.8s; }
+    .sheet-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .sheet-row select {
+      width: auto;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-md py-4 animate__animated animate__fadeIn">
+    <h2 class="mb-4 text-center animate__animated animate__bounce">
+      <i class="bi bi-list-check me-2"></i>Сравнение Данных из колонок
+    </h2>
+
+    <!-- Шаг 1: динамический список листов -->
+    <div class="mb-4 animate__animated animate__fadeInUp" style="animation-delay:0.2s">
+      <h5><i class="bi bi-file-earmark-text me-1"></i>1. Исходный файл от брокеров</h5>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <button id="btnF" class="btn btn-primary btn-animate">
+            <i class="bi bi-folder2-open me-1"></i>Выбрать файл
+          </button>
+        </div>
+        <div class="col">
+          <span id="pathF" class="form-text text-truncate d-block"></span>
+        </div>
+      </div>
+      <div class="mt-3">
+        <button id="addSheetF" class="btn btn-sm btn-secondary btn-animate mb-2" disabled>
+          <i class="bi bi-plus-circle me-1"></i>Добавить лист
+        </button>
+        <div id="sheetsF-container"></div>
+      </div>
+    </div>
+
+    <!-- Шаг 2 -->
+    <div class="mb-4 animate__animated animate__fadeInUp" style="animation-delay:0.4s">
+      <h5><i class="bi bi-file-earmark-spreadsheet me-1"></i>2. Файл для сравнения</h5>
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <button id="btnD" class="btn btn-primary btn-animate">
+            <i class="bi bi-folder2-open me-1"></i>Выбрать файл
+          </button>
+        </div>
+        <div class="col">
+          <span id="pathD" class="form-text text-truncate d-block"></span>
+        </div>
+        <div class="col-md-4">
+          <select id="sheetD" class="form-select"></select>
+        </div>
+        <div class="col-md-3">
+          <select id="colD" class="form-select"></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Настройки -->
+    <div class="mb-4 animate__animated animate__fadeInUp" style="animation-delay:0.6s">
+      <h5><i class="bi bi-gear-fill me-1"></i>Настройки сохранения</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Исходный файл (F)</h6>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="saveModeF" id="modeFOverwrite" value="overwrite" checked/>
+            <label class="form-check-label" for="modeFOverwrite">Перезаписать файл F</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="saveModeF" id="modeFNew" value="new"/>
+            <label class="form-check-label" for="modeFNew">Создать новый F_colored.xlsx</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h6>Файл сравнения (D)</h6>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="saveModeD" id="modeDOverwrite" value="overwrite" checked/>
+            <label class="form-check-label" for="modeDOverwrite">Перезаписать файл D</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="saveModeD" id="modeDNew" value="new"/>
+            <label class="form-check-label" for="modeDNew">Создать новый D_colored.xlsx</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Кнопка запуска -->
+    <div class="text-center mt-5 animate__animated animate__fadeInUp" style="animation-delay:0.8s">
+      <button id="run" class="btn btn-success btn-lg btn-animate">
+        <i class="bi bi-play-fill me-1"></i>Запустить сравнение
+      </button>
+    </div>
+  </div>
+
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="preload.js"></script>
+</body>
+</html>
