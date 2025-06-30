@@ -22,10 +22,48 @@
   </style>
 </head>
 <body>
-  <div class="container-md py-4 animate__animated animate__fadeIn">
-    <h2 class="mb-4 text-center animate__animated animate__bounce">
-      <i class="bi bi-list-check me-2"></i>Сравнение Данных из колонок
-    </h2>
+  <ul class="nav nav-tabs mb-3" id="mainTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link active"
+        id="broker-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#broker-check"
+        type="button"
+        role="tab"
+        aria-controls="broker-check"
+        aria-selected="true"
+      >
+        Broker Check
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="t1-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#t1-check"
+        type="button"
+        role="tab"
+        aria-controls="t1-check"
+        aria-selected="false"
+      >
+        T1 Check
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="mainTabsContent">
+    <div
+      class="tab-pane fade show active"
+      id="broker-check"
+      role="tabpanel"
+      aria-labelledby="broker-tab"
+    >
+      <div class="container-md py-4 animate__animated animate__fadeIn">
+        <h2 class="mb-4 text-center animate__animated animate__bounce">
+          <i class="bi bi-list-check me-2"></i>Сравнение Данных из колонок
+        </h2>
 
     <!-- Шаг 1: динамический список листов -->
     <div class="mb-4 animate__animated animate__fadeInUp" style="animation-delay:0.2s">
@@ -104,7 +142,17 @@
         <i class="bi bi-play-fill me-1"></i>Запустить сравнение
       </button>
     </div>
-  </div>
+  </div><!-- container -->
+</div><!-- broker-check tab -->
+    <div
+      class="tab-pane fade"
+      id="t1-check"
+      role="tabpanel"
+      aria-labelledby="t1-tab"
+    >
+      <div class="p-3">Пример текста для закладки T1 Check.</div>
+    </div>
+  </div><!-- tab-content -->
 
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="preload.js"></script>
